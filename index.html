@@ -6,56 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Лабораторная работа №5</title>
 	<style>
-		/* ===== Общие стили ===== */
+		/* ===== Задача 1: float + адаптивность ===== */
 		* { box-sizing: border-box; }
 
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background: #f4f4f4;
-			color: #222;
-		}
-
-		h1, h2, h3 { color: #333; }
-
-		/* =====================================================
-		   ЗАДАЧА 1: float-верстка + адаптивность
-		   Две колонки на float, на мобильных — в одну колонку.
-		   ===================================================== */
-		.header {
-			padding: 30px 20px;
-			text-align: center;
-			color: #fff;
-			/* Задача 2 — linear-gradient (фон шапки) */
-			background: linear-gradient(135deg, #1e3c72, #2a5298 45%, #6dd5ed 100%);
-		}
-
-		.nav {
-			background: #222;
-			overflow: hidden;
-		}
-		.nav a {
-			float: left;
-			display: block;
-			color: #fff;
-			text-decoration: none;
-			padding: 12px 16px;
-			/* Задача 4 — transition для ссылок меню */
-			transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s ease;
-		}
-		.nav a:hover {
-			background-color: #6dd5ed;
-			color: #000;
-			transform: translateY(-2px);
-		}
-
-		.container {
-			max-width: 1100px;
-			margin: 0 auto;
-			padding: 15px;
-		}
-		/* clearfix чтобы float-колонки не "схлопывали" родителя */
+		/* clearfix для родителя float-колонок */
 		.clearfix::after {
 			content: "";
 			display: table;
@@ -65,90 +19,26 @@
 		.col-left {
 			float: left;
 			width: 68%;
-			background: #fff;
-			padding: 15px;
-			border: 1px solid #ddd;
 		}
 		.col-right {
 			float: right;
 			width: 30%;
-			background: #fff;
-			padding: 15px;
-			border: 1px solid #ddd;
 		}
 
-		.footer {
-			clear: both;
-			text-align: center;
-			padding: 15px;
-			color: #fff;
-			/* Задача 2 — repeating-linear-gradient (фон подвала) */
-			background: repeating-linear-gradient(45deg, #333 0 12px, #444 12px 24px);
-		}
-
-		/* Плавающая галерея внутри контента — тоже на float */
-		.float-gallery { margin: 10px 0; }
+		/* float-галерея */
 		.float-gallery img {
 			float: left;
 			width: 48%;
-			margin: 1%;
-			max-width: 100%;
-			height: auto;
 		}
 
+		/* адаптивность: резиновые картинки и прокрутка таблиц */
 		img { max-width: 100%; height: auto; }
-
 		.table-wrap { overflow-x: auto; }
-		table {
-			border-collapse: collapse;
-			margin-bottom: 20px;
-			width: 100%;
-			max-width: 100%;
-		}
-		table, th, td { border: 1px solid #000; }
-		th, td {
-			padding: 8px;
-			text-align: center;
-			vertical-align: middle;
-		}
 
-		.no-border { border: none; }
-		.with-border { border: 3px solid #444; }
-
-		fieldset { margin-bottom: 10px; }
-		.form-table td {
-			border: none;
-			text-align: left;
-			padding: 5px;
-		}
-
-		section.lab5, section.old {
-			margin-bottom: 40px;
-			border-bottom: 2px dashed #ccc;
-			padding-bottom: 25px;
-		}
-
-		.badge {
-			display: inline-block;
-			padding: 3px 10px;
-			border-radius: 12px;
-			background: #222;
-			color: #fff;
-			font-size: 13px;
-			margin-bottom: 8px;
-		}
-
-		/* =====================================================
-		   ЗАДАЧА 2: все 6 видов градиента
-		   ===================================================== */
+		/* ===== Задача 2: градиенты (фон элементов) ===== */
 		.grad-box {
-			color: #fff;
-			font-weight: bold;
-			text-align: center;
 			padding: 25px 10px;
 			margin: 10px 0;
-			border-radius: 8px;
-			text-shadow: 0 1px 2px rgba(0,0,0,.6);
 		}
 		.g-linear {
 			background: linear-gradient(to right, #ff512f, #dd2476);
@@ -160,162 +50,120 @@
 			background: radial-gradient(circle at center, #fceabb, #f8b500 60%, #f85032 100%);
 		}
 		.g-repeating-radial {
-			background: repeating-radial-gradient(circle at center, #fff 0 10px, #2193b0 10px 20px, #6dd5ed 20px 30px);
+			background: repeating-radial-gradient(circle at center, #fff 0 10px, #2193b0 10px 20px);
 		}
 		.g-conic {
 			background: conic-gradient(from 0deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
 		}
 		.g-repeating-conic {
-			background: repeating-conic-gradient(#3a1c71 0deg 15deg, #d76d77 15deg 30deg, #ffaf7b 30deg 45deg);
+			background: repeating-conic-gradient(#3a1c71 0deg 15deg, #d76d77 15deg 30deg);
 		}
 
-		/* =====================================================
-		   ЗАДАЧА 3: transform — rotate, scale, skew, translate
-		   ===================================================== */
-		.transform-demo { overflow: hidden; padding: 10px 0; }
+		/* ===== Задача 3: transform ===== */
 		.t-box {
 			float: left;
 			width: 21%;
-			margin: 2%;
 			height: 100px;
 			line-height: 100px;
 			text-align: center;
-			color: #fff;
-			font-weight: bold;
-			border-radius: 8px;
-			background: linear-gradient(135deg, #41295a, #2f0743);
-			transition: transform 0.5s ease, background 0.5s ease;
+			background-color: #666;
 		}
-		/* базовые (статичные) трансформации — каждая своя функция */
 		.t-rotate { transform: rotate(12deg); }
 		.t-scale { transform: scale(1.15); }
 		.t-skew { transform: skew(12deg, 6deg); }
 		.t-translate { transform: translate(10px, 12px); }
-		/* при наведении — комбинированные трансформации */
-		.t-rotate:hover { transform: rotate(-12deg) scale(1.2); background: #dd2476; }
-		.t-scale:hover { transform: scale(0.85) rotate(8deg); background: #11998e; }
-		.t-skew:hover { transform: skew(-12deg, -6deg) scale(1.1); background: #f85032; }
-		.t-translate:hover { transform: translate(-8px, -10px) scale(1.15); background: #2193b0; }
+		.t-rotate:hover { transform: rotate(-12deg) scale(1.2); }
+		.t-scale:hover { transform: scale(0.85) rotate(8deg); }
+		.t-skew:hover { transform: skew(-12deg, -6deg) scale(1.1); }
+		.t-translate:hover { transform: translate(-8px, -10px) scale(1.15); }
 
-		/* transform для картинок старого контента */
-		.zoom-img { transition: transform 0.5s ease, box-shadow 0.5s ease; }
-		.zoom-img:hover { transform: scale(1.08) rotate(2deg); box-shadow: 0 8px 18px rgba(0,0,0,.35); }
+		.zoom-img:hover { transform: scale(1.08) rotate(2deg); }
 
-		/* =====================================================
-		   ЗАДАЧА 4: transition
-		   ===================================================== */
+		/* ===== Задача 4: transition ===== */
+		.nav a {
+			transition: background-color 0.4s ease, color 0.4s ease;
+		}
+		.nav a:hover {
+			background-color: #6dd5ed;
+			color: #000;
+		}
+		.t-box {
+			transition: transform 0.5s ease;
+		}
+		.zoom-img {
+			transition: transform 0.5s ease;
+		}
 		.btn {
-			display: inline-block;
-			padding: 10px 22px;
-			margin: 5px;
-			border: none;
-			border-radius: 6px;
-			cursor: pointer;
-			color: #fff;
-			background: linear-gradient(to right, #2193b0, #6dd5ed);
-			/* transition с разными длительностями и timing-function */
-			transition: background 0.5s ease-in-out, transform 0.3s ease, box-shadow 0.4s linear;
+			transition: background-color 0.5s ease, transform 0.3s ease;
 		}
 		.btn:hover {
-			background: linear-gradient(to right, #dd2476, #ff512f);
-			transform: scale(1.08) translateY(-2px);
-			box-shadow: 0 6px 14px rgba(0,0,0,.3);
+			background-color: #dd2476;
+			transform: scale(1.08);
 		}
 		.card {
-			border: 1px solid #ccc;
-			border-radius: 8px;
-			padding: 12px;
-			margin: 10px 0;
-			background: #fafafa;
-			transition: background-color 0.5s ease, border-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+			transition: background-color 0.5s ease, transform 0.5s ease;
 		}
 		.card:hover {
 			background-color: #e8f8ff;
-			border-color: #2193b0;
 			transform: translateX(8px);
-			box-shadow: 0 4px 12px rgba(0,0,0,.2);
 		}
 		input, select, textarea {
-			transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+			transition: background-color 0.3s ease;
 		}
 		input:focus, select:focus, textarea:focus {
-			border-color: #2193b0;
-			box-shadow: 0 0 6px rgba(33,147,176,.6);
 			background-color: #f0fbff;
-			outline: none;
 		}
 
-		/* =====================================================
-		   ЗАДАЧА 5: две анимации по 4 кадра, одна — на одном
-		   элементе, обе — на другом
-		   ===================================================== */
+		/* ===== Задача 5: две анимации по 4 кадра ===== */
 		@keyframes animColorMove {
-			0%   { background-color: #ff512f; left: 0;        transform: rotate(0deg) scale(1);    border-radius: 8px; }
-			33%  { background-color: #f8b500; left: 30%;      transform: rotate(120deg) scale(1.3); border-radius: 50%; }
-			66%  { background-color: #11998e; left: 60%;      transform: rotate(240deg) scale(0.8); border-radius: 20px; }
-			100% { background-color: #41295a; left: calc(100% - 80px); transform: rotate(360deg) scale(1); border-radius: 8px; }
+			0%   { background-color: #ff512f; left: 0;                 transform: rotate(0deg) scale(1); }
+			33%  { background-color: #f8b500; left: 30%;               transform: rotate(120deg) scale(1.3); }
+			66%  { background-color: #11998e; left: 60%;               transform: rotate(240deg) scale(0.8); }
+			100% { background-color: #41295a; left: calc(100% - 80px); transform: rotate(360deg) scale(1); }
 		}
-		@keyframes animPulseGlow {
-			0%   { box-shadow: 0 0 0 0 rgba(221,36,118,.7); opacity: 1;    transform: scale(1); }
-			33%  { box-shadow: 0 0 20px 10px rgba(221,36,118,.2); opacity: .75; transform: scale(1.1); }
-			66%  { box-shadow: 0 0 30px 15px rgba(33,147,176,.5); opacity: .9;  transform: scale(0.95); }
-			100% { box-shadow: 0 0 0 0 rgba(33,147,176,0); opacity: 1;    transform: scale(1); }
+		@keyframes animColorOpacity {
+			0%   { background-color: #dd2476; opacity: 1;   transform: scale(1); }
+			33%  { background-color: #f8b500; opacity: 0.6; transform: scale(1.2); }
+			66%  { background-color: #2193b0; opacity: 0.8; transform: scale(0.9); }
+			100% { background-color: #3a1c71; opacity: 1;   transform: scale(1); }
 		}
 
 		.anim-track {
 			position: relative;
 			height: 110px;
-			background: #eee;
-			border: 1px solid #ccc;
-			border-radius: 8px;
 			overflow: hidden;
-			margin: 12px 0;
 		}
-		/* Один элемент — одна анимация */
+		/* один элемент — одна анимация */
 		.anim-single {
 			position: absolute;
 			top: 15px;
 			left: 0;
 			width: 80px;
 			height: 80px;
-			line-height: 80px;
-			text-align: center;
-			color: #fff;
-			font-weight: bold;
+			background-color: #ff512f;
 			animation: animColorMove 5s ease-in-out infinite alternate;
 		}
-		/* Другой элемент — две анимации одновременно (через запятую) */
+		/* другой элемент — две анимации одновременно */
 		.anim-double {
+			position: relative;
 			width: 130px;
 			height: 130px;
-			margin: 20px auto;
-			line-height: 130px;
-			text-align: center;
-			color: #fff;
-			font-weight: bold;
-			border-radius: 50%;
-			background: radial-gradient(circle, #dd2476, #3a1c71);
-			animation: animPulseGlow 3s ease-in-out infinite, animColorMove 6s linear infinite alternate;
-			position: relative;
+			background-color: #dd2476;
+			animation: animColorOpacity 3s ease-in-out infinite, animColorMove 6s linear infinite alternate;
 		}
 
-		/* =====================================================
-		   Адаптивность: планшет и мобильные (Задача 1)
-		   ===================================================== */
+		/* ===== Задача 1 (продолжение): медиазапросы ===== */
 		@media (max-width: 900px) {
 			.col-left, .col-right {
 				float: none;
 				width: 100%;
-				margin-bottom: 15px;
 			}
 			.t-box { width: 46%; }
-			.nav a { float: none; width: 100%; text-align: center; }
+			.nav a { float: none; width: 100%; }
 		}
 		@media (max-width: 480px) {
-			.header { padding: 20px 10px; font-size: 14px; }
-			.t-box { float: none; width: 96%; height: 70px; line-height: 70px; }
+			.t-box { float: none; width: 96%; }
 			.float-gallery img { float: none; width: 98%; }
-			.anim-double { width: 100px; height: 100px; line-height: 100px; }
 		}
 	</style>
 </head>
@@ -356,8 +204,8 @@
 			<section class="lab5" id="lab5-task2">
 				<span class="badge">Задача 2 — градиенты</span>
 				<h2>Задача 2. Фоны-градиенты</h2>
-				<div class="grad-box g-linear">1. linear-gradient — шапка сайта + этот блок</div>
-				<div class="grad-box g-repeating-linear">2. repeating-linear-gradient — подвал сайта + этот блок</div>
+				<div class="grad-box g-linear">1. linear-gradient</div>
+				<div class="grad-box g-repeating-linear">2. repeating-linear-gradient</div>
 				<div class="grad-box g-radial">3. radial-gradient</div>
 				<div class="grad-box g-repeating-radial">4. repeating-radial-gradient</div>
 				<div class="grad-box g-conic">5. conic-gradient</div>
@@ -368,7 +216,7 @@
 			<section class="lab5" id="lab5-task3">
 				<span class="badge">Задача 3 — transform</span>
 				<h2>Задача 3. Трансформации</h2>
-				<p>Четыре блока, каждый со своей функцией; при наведении — комбинация + смена фона:</p>
+				<p>Четыре блока, каждый со своей функцией; при наведении — комбинация:</p>
 				<div class="transform-demo clearfix">
 					<div class="t-box t-rotate">rotate(12deg)</div>
 					<div class="t-box t-scale">scale(1.15)</div>
@@ -385,8 +233,8 @@
 				<h2>Задача 4. Переходы</h2>
 				<button class="btn">Кнопка с transition</button>
 				<button class="btn" type="reset">Ещё кнопка</button>
-				<div class="card">Карточка: transition фона, рамки, сдвига (translateX) и тени — наведите курсор.</div>
-				<div class="card">Ссылки меню сверху: transition цвета фона/текста. Поля формы ниже: transition при :focus.</div>
+				<div class="card">Карточка: transition фона и сдвига (translateX) — наведите курсор.</div>
+				<div class="card">Поля формы ниже: transition фона при :focus.</div>
 			</section>
 
 			<!-- ЗАДАЧА 5 -->
@@ -394,16 +242,16 @@
 				<span class="badge">Задача 5 — @keyframes</span>
 				<h2>Задача 5. Анимации (@keyframes, ≥3 кадра)</h2>
 				<p><strong>Анимация 1 — <code>animColorMove</code></strong> (кадры 0% / 33% / 66% / 100%: меняются
-					<code>background-color</code>, <code>left</code>, <code>transform</code>, <code>border-radius</code>).</p>
-				<p><strong>Анимация 2 — <code>animPulseGlow</code></strong> (кадры 0% / 33% / 66% / 100%: меняются
-					<code>box-shadow</code>, <code>opacity</code>, <code>transform: scale</code>).</p>
+					<code>background-color</code>, <code>left</code>, <code>transform</code>).</p>
+				<p><strong>Анимация 2 — <code>animColorOpacity</code></strong> (кадры 0% / 33% / 66% / 100%: меняются
+					<code>background-color</code>, <code>opacity</code>, <code>transform: scale</code>).</p>
 				<h3>Элемент с одной анимацией:</h3>
 				<div class="anim-track">
 					<div class="anim-single">1 anim</div>
 				</div>
 				<h3>Элемент с двумя анимациями одновременно:</h3>
 				<div class="anim-double">2 anim</div>
-				<p><code>animation: animPulseGlow 3s ease-in-out infinite, animColorMove 6s linear infinite alternate;</code></p>
+				<p><code>animation: animColorOpacity 3s ease-in-out infinite, animColorMove 6s linear infinite alternate;</code></p>
 			</section>
 
 			<!-- СТАРЫЙ КОНТЕНТ (Лаб. №2), сохранен и сделан адаптивным -->
