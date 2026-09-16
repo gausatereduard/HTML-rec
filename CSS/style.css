@@ -1,0 +1,306 @@
+/* =====================================================
+   Lab 4 — внешние стили (файл CSS/style.css)
+   Комментарии указывают номер и пункт задания
+   Картинки для блоков положи вручную в папку Images
+   под именем heart.png (маленький .png, напр. сердечко)
+   ===================================================== */
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 20px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ---------- Задание 1, пункт a): общие свойства класса .block ---------- */
+/* ширина, высота, округление углов и расстояние между блоками */
+.blocks-container {
+    display: flex;
+    gap: 15px; /* расстояние между блоками */
+    flex-wrap: wrap;
+}
+
+.block {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px; /* округление углов */
+    margin: 5px; /* дополнительное расстояние между блоками */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Задание 1, пункт b): разные цвета фона .block1 ... .block5 ---------- */
+.block1 {
+    background-color: #ff2222; /* красный */
+}
+
+.block2 {
+    background-color: #222222;
+    /* ---------- Задание 1, пункт c): блок 2 — повторение по всей поверхности ---------- */
+    background-image: url("https://placehold.co/32?text=IMG");
+    background-repeat: repeat;
+}
+
+.block3 {
+    background-color: #ff4dff; /* розовый/фиолетовый */
+    /* ---------- Задание 1, пункт c): блок 3 — повторение только по горизонтали ---------- */
+    background-image: url("https://placehold.co/32?text=IMG");
+    background-repeat: repeat-x;
+    background-position: top left;
+}
+
+.block4 {
+    background-color: #22ff44; /* зелёный */
+    /* ---------- Задание 1, пункт c): блок 4 — повторение только по вертикали ---------- */
+    background-image: url("https://placehold.co/32?text=IMG");
+    background-repeat: repeat-y;
+    background-position: top left;
+}
+
+.block5 {
+    background-color: #22ddff; /* голубой */
+    /* ---------- Задание 1, пункт c): блок 5 — фиксированное положение (определяется учеником) ---------- */
+    /* Положение меняется через background-position. Сейчас — по центру без повторения */
+    background-image: url("https://placehold.co/32?text=IMG");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* =====================================================
+   Задача 2, пункт b): стили формы —
+   разные цвета текста и фона, тени, типы рамок, скругления.
+   Классы — для нескольких элементов, id — для отдельного.
+   ===================================================== */
+
+/* id-селектор: стилизация отдельного элемента (всей формы) */
+#main-form {
+    border: 1px solid #555555;
+    padding: 15px;
+    background-color: #fafafa;
+    max-width: 900px;
+}
+
+.form-columns {
+    display: flex;
+    gap: 20px;
+}
+
+.form-left,
+.form-right {
+    flex: 1;
+}
+
+/* Класс для нескольких fieldset */
+.form-group {
+    border: 1px solid #777777; /* сплошная рамка */
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 12px;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); /* тень */
+}
+
+/* Вторая группа справа с другим типом рамки (пример разных рамок) */
+.form-right .form-group {
+    border-style: double; /* двойная рамка */
+    border-width: 3px;
+    border-color: #888888;
+    background-color: #fdfdf5;
+}
+
+.form-legend {
+    font-weight: bold;
+}
+
+/* Класс для подписей (несколько элементов) */
+.form-label {
+    display: inline-block;
+    width: 130px;
+    color: #333366; /* цвет текста */
+}
+
+/* Класс для текстовых полей (несколько элементов) */
+.form-input {
+    width: 180px;
+    border: 1px solid #999999;
+    border-radius: 4px; /* округлённые углы */
+    padding: 3px 5px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+textarea.form-input {
+    width: 180px;
+    border-style: dashed; /* другой тип рамки для textarea */
+}
+
+select.form-input {
+    width: 120px;
+}
+
+.form-row {
+    margin-bottom: 8px;
+}
+
+.check-group label {
+    display: block;
+}
+
+.form-buttons button {
+    border: 1px solid #888888;
+    border-radius: 4px;
+    padding: 3px 10px;
+    background-color: #eeeeee;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* id-селектор: отдельная кнопка */
+#btn-trimite {
+    background-color: #d6e9ff;
+    border-color: #336699;
+    color: #003366;
+    font-weight: bold;
+}
+
+.form-note {
+    font-size: 14px;
+    color: #333333;
+}
+
+/* ---------- Задача 2, пункт c): псевдокласс :focus для input ---------- */
+.form-input:focus {
+    background-color: #ffffcc; /* фон активного поля */
+    border-color: #3366ff;
+    outline: 2px solid #99bbff;
+    box-shadow: 0 0 6px rgba(51, 102, 255, 0.6);
+}
+
+input[type="color"]:focus {
+    outline: 2px solid #3366ff;
+}
+
+/* ---------- Задача 2, пункт c): селекторы >, +, ~, [ ] ---------- */
+/* Селектор > (дочерний): fieldset — прямой потомок div внутри формы */
+form > div > div > fieldset {
+    margin-top: 5px;
+}
+
+/* Селектор + (соседний): подпись-примечание сразу после fieldset справа */
+.form-right fieldset + fieldset {
+    margin-top: 12px;
+}
+
+.form-right fieldset + .form-note {
+    font-style: italic;
+}
+
+/* Селектор ~ (общий соседний): все кнопки после первого fieldset слева */
+.form-left fieldset ~ .form-buttons {
+    margin-top: 10px;
+}
+
+/* Селектор [ ] (атрибут): стили для конкретных типов input */
+input[type="text"] {
+    border-left: 3px solid #999999;
+}
+
+input[type="email"] {
+    border-left: 3px solid #339966;
+}
+
+input[type="date"] {
+    border-style: dotted;
+}
+
+input[type="radio"] {
+    accent-color: #333366;
+}
+
+/* =====================================================
+   Задание 3: псевдоэлементы before, after, first-letter,
+   first-line и псевдоклассы first-child, last-child, selected
+   (selected реализован как ::selection — выделение текста)
+   ===================================================== */
+
+.list {
+    width: 400px;
+}
+
+/* Задание 3: псевдоэлемент ::before — для первого списка */
+.list1 li::before {
+    content: "★ ";
+    color: #cc0000;
+}
+
+/* Задание 3: псевдоэлемент ::after — для второго списка */
+.list2 li::after {
+    content: " ✔";
+    color: #009900;
+}
+
+/* Задание 3: псевдокласс :first-child — первый элемент списка */
+.list li:first-child {
+    color: #0000aa;
+    font-weight: bold;
+}
+
+/* Задание 3: псевдокласс :last-child — последний элемент списка */
+.list li:last-child {
+    color: #aa0000;
+    font-style: italic;
+}
+
+/* Задание 3: псевдоэлемент ::first-letter — первая буква абзаца */
+.text-paragraph::first-letter {
+    font-size: 28px;
+    font-weight: bold;
+    color: #cc0000;
+}
+
+/* Задание 3: псевдоэлемент ::first-line — первая строка абзаца */
+.text-paragraph::first-line {
+    font-weight: bold;
+    color: #333366;
+}
+
+/* Задание 3: псевдокласс selected — выделение текста (::selection) */
+.text-paragraph::selection,
+.list li::selection {
+    background-color: #ffff00;
+    color: #000000;
+}
+
+/* Заголовок списков с ::before для наглядности (тоже Задание 3) */
+.list-title::before {
+    content: "▸ ";
+    color: #555555;
+}
+
+/* =====================================================
+   Задача 4: псевдоклассы для внешней ссылки:
+   :link, :visited, :hover, :active (порядок LVHA)
+   ===================================================== */
+
+/* Задача 4: :link — непосещённая ссылка */
+a.fav-link:link {
+    color: #0000cc;
+    text-decoration: underline;
+}
+
+/* Задача 4: :visited — посещённая ссылка */
+a.fav-link:visited {
+    color: #660099;
+}
+
+/* Задача 4: :hover — при наведении мыши */
+a.fav-link:hover {
+    color: #ff0000;
+    text-decoration: none;
+    background-color: #ffffcc;
+}
+
+/* Задача 4: :active — в момент нажатия */
+a.fav-link:active {
+    color: #00aa00;
+    background-color: #ccffcc;
+}

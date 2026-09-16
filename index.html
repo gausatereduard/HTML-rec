@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №4</title>
+    <!-- Внешние стили: файл CSS/style.css -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <h1>Лабораторная работа №4</h1>
+
+    <!-- ============ Задание 1, пункт a): 5 блоков div ============ -->
+    <h2>Задание 1</h2>
+    <div class="blocks-container">
+        <!-- Задание 1, пункт a) + b): общий класс .block + индивидуальный класс .block1 (цвет фона) -->
+        <div class="block block1"></div>
+        <!-- Задание 1, пункт b) + c): блок 2 — изображение .png повторяется по всей поверхности (repeat) -->
+        <div class="block block2"></div>
+        <!-- Задание 1, пункт c): блок 3 — изображение повторяется только по горизонтали (repeat-x) -->
+        <div class="block block3"></div>
+        <!-- Задание 1, пункт c): блок 4 — изображение повторяется только по вертикали (repeat-y) -->
+        <div class="block block4"></div>
+        <!-- Задание 1, пункт c): блок 5 — изображение с фиксированным положением (no-repeat + position center) -->
+        <div class="block block5"></div>
+    </div>
+
+    <!-- ============ Задача 2, пункт a): форма с помощью HTML-тегов и div ============ -->
+    <h2>Задача 2 — Форма</h2>
+    <!-- Задача 2, пункт a): форма, div используется для размещения элементов -->
+    <!-- Задача 2, пункт b): id="main-form" — идентификатор для стилизации отдельного элемента -->
+    <form id="main-form" action="#" method="post">
+        <div class="form-columns">
+            <!-- Левая колонка -->
+            <div class="form-left">
+                <!-- Задача 2, пункт a): группа "Date personale" -->
+                <fieldset class="form-group">
+                    <legend class="form-legend">Date personale</legend>
+
+                    <div class="form-row">
+                        <label class="form-label" for="nume">*Numele:</label>
+                        <input class="form-input" type="text" id="nume" name="nume" required>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="prenume">*Prenumele:</label>
+                        <input class="form-input" type="text" id="prenume" name="prenume" required>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="email">E-mail:</label>
+                        <input class="form-input" type="email" id="email" name="email">
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="data-nasterii">*Data nasterii:</label>
+                        <input class="form-input" type="date" id="data-nasterii" name="data-nasterii" required>
+                    </div>
+                    <div class="form-row">
+                        <span class="form-label">Sexul:</span>
+                        <label><input type="radio" name="sex" value="F"> <b>F</b></label>
+                        <label><input type="radio" name="sex" value="M"> <b>M</b></label>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="telefon">Telefonul:</label>
+                        <input class="form-input" type="tel" id="telefon" name="telefon">
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="raion">Raionul:</label>
+                        <select class="form-input" id="raion" name="raion">
+                            <option>Edineț</option>
+                            <option>Chișinău</option>
+                            <option>Bălți</option>
+                            <option>Cahul</option>
+                            <option>Orhei</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <span class="form-label">Studii</span>
+                        <div class="check-group">
+                            <label><input type="checkbox" name="studii" value="colegiu"> Colegiu</label>
+                            <label><input type="checkbox" name="studii" value="licenta"> Licență</label>
+                            <label><input type="checkbox" name="studii" value="masterat"> Masterat</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="suplimentar">Suplimentar:</label>
+                        <textarea class="form-input" id="suplimentar" name="suplimentar" placeholder="Scrie aici" rows="4"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="form-row form-buttons">
+                    <button type="reset">Anuleaza</button>
+                    <!-- Задача 2, пункт b): id для отдельного элемента -->
+                    <button type="submit" id="btn-trimite">Trimite</button>
+                </div>
+            </div>
+
+            <!-- Правая колонка -->
+            <div class="form-right">
+                <!-- Задача 2, пункт a): группа "Date despre produsul ales" -->
+                <fieldset class="form-group">
+                    <legend class="form-legend">Date despre produsul ales</legend>
+                    <div class="form-row">
+                        <label class="form-label" for="denumire">*Denumirea produs:</label>
+                        <input class="form-input" type="text" id="denumire" name="denumire" required>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="producator">*Producătorul:</label>
+                        <input class="form-input" type="text" id="producator" name="producator" required>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="cantitate">*Cantitatea de produse:</label>
+                        <input class="form-input" type="number" id="cantitate" name="cantitate" min="1" required>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="culoare">*Culoarea:</label>
+                        <input type="color" id="culoare" name="culoare" value="#000000">
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="marime">*Mărimea:</label>
+                        <input class="form-input" type="text" id="marime" name="marime" required>
+                    </div>
+                </fieldset>
+
+                <!-- Задача 2, пункт a): группа "Date bancare" -->
+                <fieldset class="form-group">
+                    <legend class="form-legend">Date bancare</legend>
+                    <div class="form-row">
+                        <span class="form-label">*Tipul cardului:</span>
+                        <label><input type="radio" name="card" value="viza"> <b>Viza</b></label>
+                        <label><input type="radio" name="card" value="mastercard"> <b>MasterCard</b></label>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="nr-card">*Numărul cardului:</label>
+                        <input class="form-input" type="text" id="nr-card" name="nr-card" required>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="expira">*Expiră:</label>
+                        <input class="form-input" type="date" id="expira" name="expira" required>
+                    </div>
+                </fieldset>
+
+                <!-- Пояснение как на образце -->
+                <p class="form-note">*Câmpul trebuie să fie completat</p>
+            </div>
+        </div>
+    </form>
+
+    <!-- ============ Задание 3: псевдоэлементы и псевдоклассы для списков и абзаца ============ -->
+    <h2>Задание 3 — Псевдоэлементы и псевдоклассы</h2>
+
+    <!-- Задание 3: первый список (для before / first-child / last-child) -->
+    <h3 class="list-title">Список 1 (маркированный)</h3>
+    <ul class="list list1">
+        <li>HTML — структура страницы</li>
+        <li>CSS — стилизация элементов</li>
+        <li>Селекторы классов и идентификаторов</li>
+        <li>Псевдоклассы и псевдоэлементы</li>
+        <li>Формы и таблицы</li>
+    </ul>
+
+    <!-- Задание 3: второй список (для after / first-child / last-child) -->
+    <h3 class="list-title">Список 2 (нумерованный)</h3>
+    <ol class="list list2">
+        <li>Создать папку и файлы проекта</li>
+        <li>Сверстать 5 блоков div</li>
+        <li>Сверстать форму</li>
+        <li>Применить псевдоклассы и псевдоэлементы</li>
+        <li>Проверить внешнюю ссылку</li>
+    </ol>
+
+    <!-- Задание 3: абзац (для first-letter / first-line / selection) -->
+    <p class="text-paragraph">
+        Каскадные таблицы стилей позволяют отделить оформление веб-страницы от её структуры и многократно
+        использовать одни и те же классы для разных элементов. Псевдоклассы описывают особое состояние элемента,
+        а псевдоэлементы позволяют стилизовать его отдельные части — первую букву, первую строку, а также
+        вставлять декоративное содержимое до и после элемента без изменения HTML-разметки.
+    </p>
+
+    <!-- ============ Задача 4: внешняя ссылка с псевдоклассами ============ -->
+    <h2>Задача 4 — Внешняя ссылка</h2>
+    <!-- Задача 4: внешняя ссылка на любимую веб-страницу (link / visited / hover / active) -->
+    <p>
+        Моя любимая веб-страница:
+        <a class="fav-link" href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a>
+    </p>
+
+</body>
+</html>
