@@ -1,0 +1,18 @@
+#bgTable {
+    width: 600px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-image: url("https://placehold.co/600x400/4a90d9/ffffff?text=Main");
+    background-size: cover;
+    background-position: center;
+}
+
+#bgTable.with-border .cell {
+    border: 2px solid #000;
+}
+
+#bgTable.no-border .cell {
+    border: none;
+}

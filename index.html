@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа № 6</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Задание 1. Приветствие при загрузке</h2>
+            <p>При загрузке страницы отображается окно alert() с сообщением «Добро пожаловать!».</p>
+        </section>
+
+        <section>
+            <h2>Задание 2. Ввод имени</h2>
+            <button id="askNameBtn" type="button">Ввести имя</button>
+            <p id="nameResult"></p>
+        </section>
+
+        <section>
+            <h2>Задание 3. Таблица 3x3 со сменой фона</h2>
+            <p>Наведите указатель мыши на любую ячейку, чтобы изменить фоновое изображение таблицы.</p>
+            <div id="bgTable" class="with-border">
+                <div class="cell" data-img="https://placehold.co/600x400/e74c3c/ffffff?text=Image+1">1</div>
+                <div class="cell" data-img="https://placehold.co/600x400/27ae60/ffffff?text=Image+2">2</div>
+                <div class="cell" data-img="https://placehold.co/600x400/f39c12/ffffff?text=Image+3">3</div>
+                <div class="cell" data-img="https://placehold.co/600x400/8e44ad/ffffff?text=Image+4">4</div>
+                <div class="cell" data-img="https://placehold.co/600x400/16a085/ffffff?text=Image+5">5</div>
+                <div class="cell" data-img="https://placehold.co/600x400/d35400/ffffff?text=Image+6">6</div>
+                <div class="cell" data-img="https://placehold.co/600x400/2e86c1/ffffff?text=Image+7">7</div>
+                <div class="cell" data-img="https://placehold.co/600x400/c0392b/ffffff?text=Image+8">8</div>
+                <div class="cell" data-img="https://placehold.co/600x400/229954/ffffff?text=Image+9">9</div>
+            </div>
+            <button id="toggleBorderBtn" type="button">Показать / скрыть рамку</button>
+        </section>
+
+        <section>
+            <h2>Задание 4. События клавиатуры</h2>
+            <p>Нажмите и удерживайте любую клавишу в поле ввода: свойства абзаца и изображения изменятся. Отпустите клавишу — свойства вернутся.</p>
+            <input id="keyField" type="text" placeholder="Нажмите клавишу здесь">
+            <p id="demoParagraph">Это демонстрационный абзац. Его размер, цвет фона, цвет текста и рамка меняются при нажатии клавиши в поле выше.</p>
+            <img id="demoImage" src="https://placehold.co/300x200/4a90d9/ffffff?text=Demo" alt="Демонстрационное изображение">
+        </section>
+
+        <section>
+            <h2>Задание 5. Возраст по дате рождения</h2>
+            <p>Введите дату рождения и нажмите «Отправить».</p>
+            <div class="birth-inputs">
+                <input id="day" type="number" min="1" max="31" placeholder="Число">
+                <input id="month" type="number" min="1" max="12" placeholder="Месяц">
+                <input id="year" type="number" min="1900" max="2100" placeholder="Год">
+            </div>
+            <br>
+            <button id="submitBtn" type="button">Отправить</button>
+            <p id="task5Result"></p>
+        </section>
+    </main>
+    <footer>
+        Лабораторная работа № 6
+    </footer>
+    <script src="JS/script.js"></script>
+</body>
+</html>
