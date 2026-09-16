@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Лабораторная работа №2 — Изображения, Карты, Формы, Фреймы, Аудио и Видео</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+		}
+
+		h1,
+		h2 {
+			color: #333;
+		}
+
+		table {
+			border-collapse: collapse;
+			margin-bottom: 30px;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid #000;
+		}
+
+		th,
+		td {
+			padding: 8px;
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		/* Задача 1: изображения без рамки */
+		.no-border {
+			border: none;
+		}
+
+		/* Задача 1: третье изображение с рамкой */
+		.with-border {
+			border: 3px solid #444;
+		}
+
+		fieldset {
+			margin-bottom: 10px;
+		}
+
+		.form-table td {
+			border: none;
+			text-align: left;
+			padding: 5px;
+		}
+
+		section {
+			margin-bottom: 50px;
+			border-bottom: 2px dashed #ccc;
+			padding-bottom: 30px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Лабораторная работа №2</h1>
+
+	<!-- ==================================================== -->
+	<!-- Задача 1: Вставка изображений с атрибутами img       -->
+	<!-- ==================================================== -->
+	<section id="task1">
+		<h2>Задача 1</h2>
+
+		<!-- N1.a) два изображения рядом, одинакового размера, без рамки -->
+		<table>
+			<tr>
+				<td>
+					<img src="https://placehold.co/250x180" alt="Первое изображение" title="Первое изображение" width="250"
+						height="180" class="no-border">
+				</td>
+				<td>
+					<img src="https://placehold.co/250x180" alt="Второе изображение" title="Второе изображение" width="250"
+						height="180" class="no-border">
+				</td>
+			</tr>
+			<!-- N1.b) третье изображение с рамкой, по центру, во всю ширину таблицы -->
+			<tr>
+				<td colspan="2" style="text-align:center;">
+					<img src="https://placehold.co/250x180" alt="Третье изображение" title="Третье изображение" width="510"
+						height="180" class="with-border">
+				</td>
+			</tr>
+		</table>
+	</section>
+
+
+	<!-- ==================================================== -->
+	<!-- Задача 2: Таблица "Date despre copiii colaboratorilor" -->
+	<!-- ==================================================== -->
+	<section id="task2">
+		<h2>Задача 2</h2>
+
+		<table>
+			<caption><strong>Date despre copiii colaboratorilor</strong></caption>
+			<tr>
+				<th>Nume, prenume</th>
+				<th>Adresă fizică</th>
+				<th>Număr copii minori</th>
+				<th>Prenume copil și anul de naștere</th>
+				<th>Poza copil</th>
+			</tr>
+
+			<!-- Первая строка — 2 ребёнка, ячейки Nume/Adresă/Număr объединены по вертикали -->
+			<tr>
+				<td rowspan="2">Ivanov Elena</td>
+				<td rowspan="2">Str. Codrilor 45, ap.56</td>
+				<td rowspan="2">2</td>
+				<td>Elena, 2006</td>
+				<td><img src="https://placehold.co/80" alt="Elena" title="Elena, 2006" width="80" height="80"></td>
+			</tr>
+			<tr>
+				<td>Valeriu, 2011</td>
+				<td><img src="https://placehold.co/80" alt="Valeriu" title="Valeriu, 2011" width="80" height="80"></td>
+			</tr>
+
+			<!-- Вторая строка — 3 ребёнка -->
+			<tr>
+				<td rowspan="3">Mihailov Marta</td>
+				<td rowspan="3">Str. Puskin 10, ap.45</td>
+				<td rowspan="3">3</td>
+				<td>Ion, 2008</td>
+				<td><img src="https://placehold.co/80" alt="Ion" title="Ion, 2008" width="80" height="80"></td>
+			</tr>
+			<tr>
+				<td>Ecaterina, 2010</td>
+				<td><img src="https://placehold.co/80" alt="Ecaterina" title="Ecaterina, 2010" width="80" height="80"></td>
+			</tr>
+			<tr>
+				<td>Valentin, 2011</td>
+				<td><img src="https://placehold.co/80" alt="Valentin" title="Valentin, 2011" width="80" height="80"></td>
+			</tr>
+
+			<!-- Третья строка — 1 ребёнок -->
+			<tr>
+				<td>Cliucnicov Magdalena</td>
+				<td>Str. Nucilor 34, ap. 22</td>
+				<td>1</td>
+				<td>Mariuța, 2012</td>
+				<td><img src="https://placehold.co/80" alt="Mariuța" title="Mariuța, 2012" width="80" height="80"></td>
+			</tr>
+
+			<!-- Итоговая строка -->
+			<tr>
+				<td colspan="2"><strong>Total număr copii</strong></td>
+				<td colspan="3">6</td>
+			</tr>
+		</table>
+	</section>
+
+
+	<!-- ==================================================== -->
+	<!-- Задача 3: изображения-ссылки на страницы с подробностями о ребёнке -->
+	<!-- ==================================================== -->
+	<section id="task3">
+		<h2>Задача 3</h2>
+
+		<table>
+			<caption><strong>Date despre copiii colaboratorilor (cu link-uri)</strong></caption>
+			<tr>
+				<th>Nume, prenume</th>
+				<th>Adresă fizică</th>
+				<th>Număr copii minori</th>
+				<th>Prenume copil și anul de naștere</th>
+				<th>Poza copil</th>
+			</tr>
+			<tr>
+				<td rowspan="2">Ivanov Elena</td>
+				<td rowspan="2">Str. Codrilor 45, ap.56</td>
+				<td rowspan="2">2</td>
+				<td>Elena, 2006</td>
+				<td>
+					<!-- Изображение-ссылка: клик открывает страницу с подробностями о ребёнке -->
+					<a href="HTML/elena.html">
+						<img src="https://placehold.co/80" alt="Elena" title="Подробнее о Elena" width="80" height="80">
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td>Valeriu, 2011</td>
+				<td>
+					<a href="HTML/valeriu.html">
+						<img src="https://placehold.co/80" alt="Valeriu" title="Подробнее о Valeriu" width="80" height="80">
+					</a>
+				</td>
+			</tr>
+			<!-- ...аналогично для остальных детей, ссылки ведут на HTML/<имя>.html -->
+		</table>
+		<p><em>Примечание: для каждого ребёнка создана отдельная страница в папке HTML (пример: HTML/elena.html).</em></p>
+	</section>
+
+
+	<!-- ==================================================== -->
+	<!-- Задача 4: изображение-карта (img, map, area)          -->
+	<!-- ==================================================== -->
+	<section id="task4">
+		<h2>Задача 4</h2>
+		<p>Карта офиса компании с активными зонами:</p>
+
+		<!-- Изображение, к которому привязана карта через атрибут usemap -->
+		<img src="https://placehold.co/600x400" alt="Схема офиса" title="Схема офиса компании" width="600" height="400"
+			usemap="#officemap">
+
+		<map name="officemap" width="600" height="400">
+			<!-- N4.a) прямоугольная область -->
+			<area shape="rect" coords="10,10,150,120" href="HTML/kabinet-direktor.html" alt="Кабинет директора"
+				title="Кабинет директора">
+			<!-- N4.b) круглая область -->
+			<area shape="circle" coords="300,200,60" href="HTML/zal-soveshaniy.html" alt="Зал совещаний"
+				title="Зал совещаний">
+			<!-- N4.c) многоугольная область -->
+			<area shape="poly" coords="400,50,550,50,500,150,420,150" href="HTML/otdel-it.html" alt="Отдел IT"
+				title="Отдел IT">
+		</map>
+	</section>
+
+
+	<!-- ==================================================== -->
+	<!-- Задача 5: Форма регистрации                           -->
+	<!-- ==================================================== -->
+	<section id="task5">
+		<h2>Задача 5</h2>
+
+		<form action="#" method="post">
+			<table class="form-table">
+				<tr>
+					<!-- Левый блок: данные о человеке -->
+					<td style="vertical-align: top;">
+						<fieldset>
+							<legend>Date personale</legend>
+							<table class="form-table">
+								<tr>
+									<td>*Numele:</td>
+									<td><input type="text" name="numele" pattern="[A-Za-zĂăÂâÎîȘșȚț ]+" required></td>
+								</tr>
+								<tr>
+									<td>*Prenumele:</td>
+									<td><input type="text" name="prenumele" pattern="[A-Za-zĂăÂâÎîȘșȚț ]+" required></td>
+								</tr>
+								<tr>
+									<td>E-mail:</td>
+									<td><input type="email" name="email"></td>
+								</tr>
+								<tr>
+									<td>*Data nasterii:</td>
+									<td><input type="date" name="data_nasterii" required></td>
+								</tr>
+								<tr>
+									<td>Sexul:</td>
+									<td>
+										<input type="radio" name="sex" value="F"> F
+										<input type="radio" name="sex" value="M"> M
+									</td>
+								</tr>
+								<tr>
+									<td>Telefonul:</td>
+									<td><input type="tel" name="telefon"></td>
+								</tr>
+								<tr>
+									<td>Raionul:</td>
+									<td>
+										<select name="raion">
+											<option value="Edinet">Edinet</option>
+											<option value="Balti">Balti</option>
+											<option value="Chisinau">Chisinau</option>
+											<option value="Cahul">Cahul</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>Studii:</td>
+									<td>
+										<input type="checkbox" name="studii" value="Colegiu"> Colegiu<br>
+										<input type="checkbox" name="studii" value="Licenta"> Licență<br>
+										<input type="checkbox" name="studii" value="Masterat"> Masterat
+									</td>
+								</tr>
+								<tr>
+									<td>Suplimentar:</td>
+									<!-- textarea, максимум 1000 символов -->
+									<td><textarea name="suplimentar" maxlength="1000" placeholder="Scrie aici" rows="4"
+											cols="25"></textarea></td>
+								</tr>
+							</table>
+						</fieldset>
+					</td>
+
+					<!-- Правый блок: данные о продукте и банковские данные -->
+					<td style="vertical-align: top;">
+						<fieldset>
+							<legend>Date despre produsul ales</legend>
+							<table class="form-table">
+								<tr>
+									<td>*Denumirea produs:</td>
+									<td><input type="text" name="denumire_produs" pattern="[A-Za-zĂăÂâÎîȘșȚț ]+" required></td>
+								</tr>
+								<tr>
+									<td>*Producătorul:</td>
+									<td><input type="text" name="producator" pattern="[A-Za-zĂăÂâÎîȘșȚț ]+" required></td>
+								</tr>
+								<tr>
+									<td>*Cantitatea de produse:</td>
+									<td><input type="number" name="cantitate" min="1" required></td>
+								</tr>
+								<tr>
+									<td>*Culoarea:</td>
+									<td><input type="color" name="culoare" required></td>
+								</tr>
+								<tr>
+									<td>*Mărimea:</td>
+									<td><input type="text" name="marimea" required></td>
+								</tr>
+							</table>
+						</fieldset>
+
+						<fieldset>
+							<legend>Date bancare</legend>
+							<table class="form-table">
+								<tr>
+									<td>*Tipul cardului:</td>
+									<td>
+										<input type="radio" name="card" value="Viza" required> Viza
+										<input type="radio" name="card" value="MasterCard"> MasterCard
+									</td>
+								</tr>
+								<tr>
+									<td>*Numărul cardului:</td>
+									<td><input type="text" name="numar_card" pattern="[0-9]{16}" required></td>
+								</tr>
+								<tr>
+									<td>*Expiră:</td>
+									<td><input type="date" name="expira" required></td>
+								</tr>
+							</table>
+						</fieldset>
+					</td>
+				</tr>
+			</table>
+
+			<p><em>*Câmpul trebuie să fie completat</em></p>
+
+			<button type="reset">Anuleaza</button>
+			<button type="submit">Trimite</button>
+		</form>
+	</section>
+
+
+	<!-- ==================================================== -->
+	<!-- Задача 6: iframe с картой местоположения компании     -->
+	<!-- ==================================================== -->
+	<section id="task6">
+		<h2>Задача 6</h2>
+
+		<!--
+        N6.a) зайти на maps.google.com, ввести адрес компании
+        N6.b) нажать Share -> "Embed a map"
+        N6.c) скопированный код вставлен ниже (пример — заменить на свой сгенерированный src)
+    -->
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.9!2d28.8497!3d47.0245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDAxJzI4LjIiTiAyOMKwNTAnNTkuMCJF!5e0!3m2!1sro!2smd!4v1690000000000"
+			width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade">
+		</iframe>
+	</section>
+
+
+	<!-- ==================================================== -->
+	<!-- Задача 7: аудио- и видеофрагменты                     -->
+	<!-- ==================================================== -->
+	<section id="task7">
+		<h2>Задача 7</h2>
+
+		<!-- N7.a) Аудио в двух форматах: mp3 и ogg -->
+		<h3>Аудио</h3>
+		<audio controls>
+			<source src="https://samplelib.com/wav/sample-3s-8khz.wav" type="audio/mpeg">
+			<source src="https://samplelib.com/mp3/sample-6s.mp3" type="audio/ogg">
+			Ваш браузер не поддерживает тег audio.
+		</audio>
+
+		<!-- N7.b) Видео в двух форматах: mp4 и webm -->
+		<h3>Видео</h3>
+		<video controls width="480" height="270">
+			<source src="https://samplelib.com/mp4/sample-5s.mp4" type="video/mp4">
+			<source src="https://samplelib.com/webm/sample-5s-360p.webm" type="video/webm">
+			Ваш браузер не поддерживает тег video.
+		</video>
+	</section>
+
+</body>
+
+</html>
