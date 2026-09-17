@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>МойМагазин — Электроника</title>
+</head>
+<body class="bg-slate-100 min-h-screen flex flex-col">
+
+    <!-- ШАПКА (одна на всех страницах, логика счётчика — в main.js) -->
+    <header class="bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
+            <a href="index.html" class="text-xl font-bold">🛍️ МойМагазин</a>
+            <a href="cart.html" class="ml-auto bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium">
+                Корзина (<span data-cart-count>0</span>)
+            </a>
+        </div>
+    </header>
+
+    <!-- data-category говорит скрипту category.page.js, что показать -->
+    <main data-category="electronics" class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full">
+        <h1 class="text-3xl font-bold">Электроника</h1>
+
+        <div class="mt-4 flex flex-wrap gap-2">
+            <a href="index.html" class="px-4 py-1.5 rounded-full text-sm font-medium border bg-white text-slate-700 border-slate-300">Все</a>
+            <a href="category-electronics.html" class="px-4 py-1.5 rounded-full text-sm font-medium border bg-slate-900 text-white border-slate-900">Электроника</a>
+            <a href="category-clothing.html" class="px-4 py-1.5 rounded-full text-sm font-medium border bg-white text-slate-700 border-slate-300">Одежда</a>
+            <a href="category-home.html" class="px-4 py-1.5 rounded-full text-sm font-medium border bg-white text-slate-700 border-slate-300">Дом</a>
+        </div>
+
+        <input
+            data-search
+            type="search"
+            placeholder="Поиск внутри категории…"
+            class="mt-4 w-full max-w-md px-4 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+
+        <div data-products class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <p class="text-slate-500">Загрузка товаров…</p>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-sm text-center py-4">
+        © 2026 МойМагазин
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/category.page.js"></script>
+</body>
+</html>

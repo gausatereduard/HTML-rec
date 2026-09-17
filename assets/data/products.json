@@ -1,0 +1,105 @@
+{
+  "categories": [
+    { "id": "electronics", "name": "Электроника", "page": "category-electronics.html" },
+    { "id": "clothing", "name": "Одежда", "page": "category-clothing.html" },
+    { "id": "home", "name": "Дом", "page": "category-home.html" }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Смартфон Nova X5",
+      "category": "electronics",
+      "price": 24990,
+      "description": "6.5\" экран, 128 ГБ памяти, двойная камера.",
+      "emoji": "📱"
+    },
+    {
+      "id": 2,
+      "name": "Ноутбук Aero 14",
+      "category": "electronics",
+      "price": 59990,
+      "description": "Лёгкий ноутбук для учёбы и работы, SSD 512 ГБ.",
+      "emoji": "💻"
+    },
+    {
+      "id": 3,
+      "name": "Наушники SoundPods",
+      "category": "electronics",
+      "price": 3990,
+      "description": "Беспроводные наушники с шумоподавлением.",
+      "emoji": "🎧"
+    },
+    {
+      "id": 4,
+      "name": "Умные часы FitTime",
+      "category": "electronics",
+      "price": 7990,
+      "description": "Пульс, шаги, сон и уведомления со смартфона.",
+      "emoji": "⌚"
+    },
+    {
+      "id": 5,
+      "name": "Футболка базовая",
+      "category": "clothing",
+      "price": 990,
+      "description": "Хлопок 100%, размеры S–XL, белый цвет.",
+      "emoji": "👕"
+    },
+    {
+      "id": 6,
+      "name": "Джинсы Classic",
+      "category": "clothing",
+      "price": 2990,
+      "description": "Прямой крой, плотный деним, тёмно-синие.",
+      "emoji": "👖"
+    },
+    {
+      "id": 7,
+      "name": "Кроссовки RunFast",
+      "category": "clothing",
+      "price": 4990,
+      "description": "Лёгкие кроссовки для города и спорта.",
+      "emoji": "👟"
+    },
+    {
+      "id": 8,
+      "name": "Куртка WindStop",
+      "category": "clothing",
+      "price": 6990,
+      "description": "Ветрозащитная куртка с капюшоном.",
+      "emoji": "🧥"
+    },
+    {
+      "id": 9,
+      "name": "Кружка Ceramic 350 мл",
+      "category": "home",
+      "price": 590,
+      "description": "Керамическая кружка, можно мыть в посудомойке.",
+      "emoji": "☕"
+    },
+    {
+      "id": 10,
+      "name": "Лампа настольная Glow",
+      "category": "home",
+      "price": 1990,
+      "description": "Тёплый свет, три режима яркости.",
+      "emoji": "💡"
+    },
+    {
+      "id": 11,
+      "name": "Плед Wooly",
+      "category": "home",
+      "price": 2490,
+      "description": "Тёплый плед 150×200 см, серый.",
+      "emoji": "🛋️"
+    },
+    {
+      "id": 12,
+      "name": "Кашпо для цветов Terra",
+      "category": "home",
+      "price": 890,
+      "description": "Керамическое кашпо с поддоном.",
+      "emoji": "🪴"
+    }
+  ]
+}
